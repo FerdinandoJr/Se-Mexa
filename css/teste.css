@@ -1,0 +1,41 @@
+*{padding: 0px;margin: 0px;position: relative;}
+body{width: 100vw;height: 100vh;background-color: white;overflow:hidden;}
+.t-test-n {
+	text-transform: uppercase;
+	font-weight: 600;
+	font-family: arial;
+}
+.t-test-p {
+	padding: 10px 0;
+}
+
+.t-test {
+	padding: 10px;
+	border-top: 1px solid gray;
+}
+
+.t-test.OK {
+	background: #00800036;
+}
+
+.t-test-c {
+	background: white;
+	padding: 15px;
+	display: none;
+}
+
+.t-test-c.t-test-show {
+	display: block;
+}
+.t-test.ERROR {
+	background: #ff000047;
+}
+
+.t-test-visu {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	padding: 10px;
+	z-index: 1;
+	cursor: pointer;
+}
