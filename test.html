@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="color-scheme" content="light dark" />
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/teste.css">
+</head>
+<style type="text/css">
+
+</style>
+<body>
+	<div id="testes">
+		
+	</div>
+	<div id='aux'></div>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript">
+		const testes = $("#testes");
+		const aux = $("#aux");
+		var qtdTeste = 0;
+		function log(name, status ,content=""){
+			var progress = "ERROR";
+			var visu ="";
+			if (status){progress = "OK";}	
+			if(content !=""){visu = "<div class='t-test-visu'><i>&#xe804;</i></div>";}
+
+			testes.append("<div id='test_"+qtdTeste+"' class='t-test "+progress+"'>"+visu+"<div class='t-test-n'>"+name+"</div><div class='t-test-p'>"+progress+"</div><div class='t-test-c'>"+content+"</div></div>");
+
+			if (visu != ""){
+				$("#test_"+qtdTeste).find(".t-test-visu").click(function(){
+					const pai = $(this).parent();
+					const c = pai.find(".t-test-c");
+					const i = $(this).find("i");
+					if (!c.is(".t-test-show")){
+						c.addClass("t-test-show");
+						i.html("&#xe807;");
+					}else{
+						c.removeClass("t-test-show");
+						i.html("&#xe804;");
+					}
+
+				});	
+				qtdTeste++;
+			}			
+			aux.html("");
+		}
+
+		function equals(a,b){return a==b;}
+		function notEquals(a,b){return a!=b;}
+
+		/* TESTES */
+
+		function testProgress(){
+			const id = "all";
+
+			html = '<div id="progressoTotal"><div class="r-progressAll"><div class="r-center" id="all" data-percent="26" data-size="225" data-line="22"><span class="prog-msg">Progresso total desse mês</span></div></div></div>';
+			aux.append(html);			
+			
+			var res = progress(id, 35);
+
+			log("Barra de Progresso", res , html);
+			progress(id, 35);
+		}
+
+
+		function testGeraListaHistorico(){
+			const h = {
+			    0:{
+			        "nome" : "Alongar",
+			        "realizado" : true,
+			        "data": "10/05/2022",
+			    },
+			    1:{
+			        "nome" : "Pedalar",
+			        "realizado" : false,
+			        "data": "13/05/2022",
+			    }
+			}
+
+			var res = geraListaHistorico(h);
+			
+			log("Gera Lista do Historico", res, res);
+		}
+
+
+		function testIsChecked(){
+			html = '<div id="minhasAtiv" class="r-checkbox"> <label class="check-container">Alongar<input type="checkbox"><span class="checkmark"></span></label> <label class="check-container">Caminhar<input type="checkbox" checked="checked"><span class="checkmark"></span></label></div>';
+			aux.append(html);
+			var res = isChecked($("#minhasAtiv"));
+			
+			log("Campo Checked", equals(res, true), html);
+		}
+
+
+		function testHref(){
+			const t = $("#testes");
+
+			var d = href(t);
+	
+			log("Troca de Páginas (href)", equals(t, d), (equals(t, d)? "Página "+d.attr("id")+" existe": "Página "+d.attr("id")+" não existe"));
+		}
+
+		function testAddHistorico(){
+			const atv = {
+			    0:{
+			        "name":"Alongar", 
+			        "value" : 10,
+			    },
+			};
+
+			const his = [];
+			const data = "10/09/2022";
+			const real = true;
+
+			var a =addHistorico(his, atv[0], real, data);
+			console.log(his)
+			var res = notEquals(a, undefined);
+			res += equals(his[0].nome, atv[0].name); 
+			res += equals(his[0].realizado, real); 
+			res += equals(his[0].data, data);
+			
+			log("Histórico", equals(res, 4), JSON.stringify(his[0]));
+		}
+
+		function testAddPontosAtividades(){
+			var pt = 10;
+			const user = {
+			    "nome": "Usuário",
+			    "pontos": 45,
+			    "ofensivas": 3,
+			};
+			var res = addPontosAtividades(user, pt);
+
+			log("Adicionando Pontos", equals(user.pontos, 55), JSON.stringify(user));
+		}
+
+		function testconcluiuAtividade(){
+			const atv = {
+			    0:{
+			        "name":"Alongar", 
+			        "value" : 10,
+			    },
+			};
+
+			const user = {
+			    "nome": "Usuário",
+			    "pontos": 45,
+			    "ofensivas": 3,
+			};
+
+			const his = [];
+			const data = "05/03/2021";
+			const real = true;
+			concluiuAtividade(real,data, user, atv[0], his);
+			
+			var res = notEquals(his[0], undefined);
+			res += equals(user.pontos, 55);
+			res += equals(his[0].realizado,real);
+			res += equals(user.ofensivas, 4);
+
+			log("Concluiu Atividade", equals(res, 4), "Usuário: "+JSON.stringify(user)+"<br>Atividade: "+JSON.stringify(atv)+"<br>Histórico: "+JSON.stringify(his[0]));
+
+		}
+
+
+		$(document).ready(function(){
+
+			testProgress();
+			testGeraListaHistorico();
+			testIsChecked();
+			testHref();
+			testAddHistorico();
+			testAddPontosAtividades();
+			testconcluiuAtividade();
+		});
+	</script>
+</body>
+</html>
