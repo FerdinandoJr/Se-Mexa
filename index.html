@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="color-scheme" content="light dark" />
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>SE MEXA</title>
+    </head>
+    <body>
+        <!--PAGINA 0-->
+        <div id='page0' class="r-page r-active">
+            <div class="r-body">
+                <div class="r-header"></div>
+                <div class="r-content">
+                    <div id='bemvindo'>
+                        <div id='logoApp'>
+                            <div class="r-tarefa-icon" style="margin-bottom: 20px;"><div class="r-tarefa-i"><i>&#xe82A;</i></div></div>                                
+                        </div>
+                        <div id="titlebemvindo">BEM VINDO!</div>
+                        <div id="descbemvindo">Esse aplicativo foi feito organizar seus treinos e mudar sua rotina</div>
+                        <button class="lbtn r-btn r-center-l" h='page1'><span>Vamos Começar!</span><i>&#xe802;</i></button>                
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PAGINA 1-->
+        <div id='page1' class="r-page">
+            <div class="r-body">
+                <div class="r-header"></div>
+                <div class="r-content">
+                    <div class="r-form">
+                        <div class="r-form-campo">
+                            <label class="r-label">Nome</label>
+                            <div class="r-descrition">*Como quer ser chamado?</div>
+                            <div class="r-input">
+                                <input id='nomeUser' type='text' placeholder="Ex: José" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <button id='geraName' class="btnNext lbtn r-btn" h='page11'><span>Avançar</span><i>&#xe802;</i></button>
+                </div>
+            </div>
+        </div>  
+
+        <div id='page11' class="r-page">
+            <div class="r-header">
+               <button class="lbtn r-btn" h='page1'><i>&#xe801;</i></button>
+            </div>
+            <div class="r-content">
+                <div class="r-form-campo">
+                    <label class="r-label">Atividades físicas:</label>
+                    <div class="r-descrition">*Atividades físicas que irá realizar</div>
+                    <div id='minhasAtiv' class='r-checkbox'>
+                        <label class="check-container">Alongar<input type="checkbox"><span class="checkmark"></span></label>
+                        <label class="check-container">Caminhar<input type="checkbox"><span class="checkmark"></span></label>
+                        <label class="check-container">Correr<input type="checkbox"><span class="checkmark"></span></label>
+                        <label class="check-container">CrossFit<input type="checkbox"><span class="checkmark"></span></label>
+                        <label class="check-container">Exercícios Casa<input type="checkbox"><span class="checkmark"></span></label>
+                        <label class="check-container">Funcional<input type="checkbox"><span class="checkmark"></span></label>
+                        <label class="check-container">Ioga<input type="checkbox"><span class="checkmark"></span></label>
+                        <label class="check-container">Musculação<input type="checkbox"><span class="checkmark"></span></label>
+                        <label class="check-container">Nadar<input type="checkbox"><span class="checkmark"></span></label>
+                        <label class="check-container">Pedalar<input type="checkbox"><span class="checkmark"></span></label>
+                        <label class="check-container" id='outraActive'>Outros<input type="checkbox"><span class="checkmark"></span></label>
+                    </div>                    
+                </div>
+                <div class="r-form-campo opAti" style="display: none;">
+                    <label class="r-label">Outros:</label>
+                    <div class="r-descrition">*Outras Atividades físicas que irá realizar</div>
+                    <div id='outraAtiv'>
+                        <div class="r-input-btn">
+                            <div class="r-input"><input type='text' value=""></div>
+                            <button class="r-btn deletAtiv"><i>&#xe809;</i></button>
+                        </div>
+                    </div>
+                    <button id='addOpt' class="r-btn"><span>Novo</span><div class="plus"><i>&#xe809;</i></div></button>
+                </div>
+                <button id='geraAtiv' class="btnNext r-btn" h='page12'><span>Avançar</span><i>&#xe802;</i></button>
+            </div>
+        </div>
+
+         <!--PAGINA 11-->  
+         <div id='page12' class="r-page">
+            <div class="r-header">
+               <button class="lbtn r-btn" h='page11'><i>&#xe801;</i></button>
+            </div>
+            <div class="r-content">
+                <div class="r-form-campo">
+                    <label class="r-label">Dias da Semana</label>
+                    <div class="r-descrition">*Dias da semana que praticará atividade física</div>
+                    <div id='diaSemana' class='r-checkbox'>
+                        <label class="check-container">Domingo<input type="checkbox"><span class="checkmark"></span></label>
+                        <label class="check-container">Segunda<input type="checkbox"><span class="checkmark"></span></label>
+                        <label class="check-container">Terça<input type="checkbox"><span class="checkmark"></span></label>
+                        <label class="check-container">Quarta<input type="checkbox"><span class="checkmark"></span></label>
+                        <label class="check-container">Quinta<input type="checkbox"><span class="checkmark"></span></label>
+                        <label class="check-container">Sexta<input type="checkbox"><span class="checkmark"></span></label>
+                        <label class="check-container">Sábado<input type="checkbox"><span class="checkmark"></span></label>
+                    </div>
+                </div>
+                <button id='geraSemana' class="btnNext r-btn" h='page2'><span>Avançar</span><i>&#xe802;</i></button>                
+            </div>
+        </div>
+
+        <!--PAGINA 2-->  
+        <div id='page2' class="r-page">
+            <div class="r-body">
+                <div class="r-header" style="display: grid;grid-template-columns: 30% 70%;">
+                    <div class="logo" >
+                        <button class="lbtn r-btn" h='panel1'><i>&#xe818;</i></button>
+                    </div>
+                    <div class="r-header-info" >
+                        <div id="ofensivas"><span class="r-header-info-name"></span><span class="r-header-info-span"></span></div>
+                        <div id="pontos"><span class="r-header-info-name"></span><span class="r-header-info-span"></span></div>    
+                    </div>                    
+                </div>
+                <div class="r-content">
+                    <div id='progressoTotal'>
+                        <div class="r-progressAll"><div class="r-center" id='all' data-percent="26" data-size='225' data-line='22'><span class="prog-msg">Progresso total desse mês</span></div></div>
+                    </div>
+                    <div id="menu">
+                        <div id='btn-calendario' class="r-menu-btn" h='page3'>
+                            <div class="r-menu-icon"><div class="r-menu-i"><i>&#xe80A;</i></div></div>
+                            <div class="r-menu-title" style="color:#389fe3">Calendário</div>
+                        </div>
+                        <div class="r-menu-btn" h='page4'>
+                            <div class="r-menu-icon"><div class="r-menu-i" style="background: linear-gradient(0, #764df5, #bc93fc);"><i>&#xe82A;</i></div></div>
+                            <div class="r-menu-title" style="color:#764df5">Atividades</div>
+                        </div>
+                        <div id='btn-relatorio' class="r-menu-btn" h='page5'>
+                            <div class="r-menu-icon"><div class="r-menu-i" style="background: linear-gradient(0, #d92dc0,#ff81ff);"><i>&#xe80D;</i></div></div>
+                            <div class="r-menu-title" style="color: #d92dc0;">Relatorios</div>
+                        </div>
+                        <div id='btn-historico' class="r-menu-btn" h='page7'>
+                            <div class="r-menu-icon"><div class="r-menu-i" style="background:linear-gradient(0, #db1a1a,#ff8181);"><i>&#xf050;</i></div></div>
+                            <div class="r-menu-title" style="color: #db1a1a;">Histórico</div>
+                        </div>
+                        <div id='btn-loja' class="r-menu-btn" h='page8'>
+                            <div class="r-menu-icon"><div class="r-menu-i" style="background: linear-gradient(0, #8e8c09,#eeca0b);"><i>&#xe80c;</i></div></div>
+                            <div class="r-menu-title" style="color: #4d4b04;">Loja</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--PAINEL-->
+            <div id='panel1' class="r-panel">
+                <div class="r-panel-back"></div>
+                <div class='r-panel-content'>
+                    <div class="r-block-e">  
+                        <button class="lbtn r-btn" h='page1'><span>Meus Dados</span><i>&#xe80B;</i></button>
+                        <button class="lbtn r-btn" h='page6'><span>Configuração</span><i>&#xe80E;</i></button>
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+        <!--PAGINA 3-->  
+        <div id='page3' class="r-page">
+            <div class="r-header">
+               <button class="lbtn r-btn" h='page2'><i>&#xe801;</i></button>
+            </div>
+            <div class="r-content">
+                <div class="jzdbox1 jzdbasf jzdcal">
+                    <div id='data_atual' class="jzdcalt">Fevereiro 2022</div>
+                    <div id='calendario' class="r-calendar">
+                        <span class="r-calendar-day">Dom</span>
+                        <span class="r-calendar-day">Seg</span>
+                        <span class="r-calendar-day">Ter</span>
+                        <span class="r-calendar-day">Qua</span>
+                        <span class="r-calendar-day">Qui</span>
+                        <span class="r-calendar-day">Sex</span>
+                        <span class="r-calendar-day">Sab</span>
+                    </div>    
+                </div>
+                <div id='legenda'>
+                    <div class="r-leg-info">
+                        <div style="background-color: #8bff88;"></div> Atividade concluídas
+                    </div>
+                    <div class="r-leg-info">
+                        <div style="background-color: #ff7474;"></div></span> Atividade não concluídas
+                    </div>
+                    <div class="r-leg-info">
+                        <div style="background-color:#d9fc5a;"></div></span> Atividade ainda para comprir
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--PAGINA 4-->  
+        <div id='page4' class="r-page">
+            <div class="r-header">
+               <button class="lbtn  r-btn" h='page2'><i>&#xe801;</i></button>
+            </div>
+            <div class="r-content">
+                <div id='descanso' class="r-ativ r-ativ-show">
+                    <div id='descanso-aviso'>
+                        <div id='descanso-icon'><i>&#xF0F4;</i></div>
+                        <div id="descanso-msg">Nenhuma atividade pendente</div>
+                    </div>
+                    <div id="descanso-btn">
+                        <button id='startAtiv' class="r-btn">Iniciar Atividade</button>
+                    </div>
+                </div>
+                <div id='executando' class="r-ativ">
+                    <div id='executando-aviso'>
+                        <div id='executando-icon'><i>&#xE819;</i></div>
+                        <div id="executando-msg"><span class="e-msg">Praticando: </span><span id='escolhaAtiv'></span></div>
+                    </div>
+                    <div id="executando-btn">
+                        <button id='stopAtiv' class="r-btn">Encerrar Atividade</button>
+                    </div>
+                </div>
+                <div id='tarefa' class="r-ativ">
+                    <div class="tarefa-all">
+                        <div class="r-tarefa-1">
+                            <div class="r-tare" style="box-shadow: none;">
+                                <div class="r-tarefa-icon"><div class="r-tarefa-i"><i>&#xe82A;</i></div></div>
+                                <div class="r-tarefa-title">Dia de Atividade</div>  
+                            </div>
+                        </div>
+                        <div class="r-tarefa-2">
+                            <div class="r-tare">
+                                <div class='r-tarefa-21'>Sua Atividade é:</div>
+                                <div id='selAtiv' class="r-select" style="margin-top: 10px;border-radius: 10px;"></div>
+                            </div>
+                        </div>
+                        <div class="r-tarefa-3">
+                            <div class="r-tare">                            
+                                <div class='r-tarefa-31'>Confirmar</div>
+                                <div class='r-tarefa-32'>
+                                    <div class="r-tarefa-btn"><button id='r-tarefa-neg' class="r-btn lbtn" h='page2' style="right: 15px;left: revert;background: linear-gradient(0, #f00909, #ff6e6e);"><i>&#xe809;</i></button></div>
+                                    <div class="r-tarefa-btn"><button id='r-tarefa-ace' class="r-btn" style="background: linear-gradient(0, #088608, #40cb40);"><i>&#xe808;</i></button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+
+        <!--PAGINA 5-->  
+        <div id='page5' class="r-page">
+            <div class="r-header">
+               <button class="lbtn  r-btn" h='page2'><i>&#xe801;</i></button>
+            </div>
+            <div class="r-content">
+                <div class="jzdcalt">Relatório</div>
+                <div id='relatorio'>
+                    <div class="r-list">
+                        <div class="r-progress"><div class="chart r-center" id='g1' data-percent="88" data-size='50' data-line='5'></div></div>
+                        <div class="r-list-date"><span>Dezembro de 2021</span></div>
+                    </div>
+                    <div class="r-list">
+                        <div class="r-progress"><div class="chart r-center" id='g2' data-percent="62" data-size='50' data-line='5'></div></div>
+                        <div class="r-list-date"><span>Novembro de 2021</span></div>
+                    </div>
+                    <div class="r-list">
+                        <div class="r-progress"><div class="chart r-center" id='g3' data-percent="45" data-size='50' data-line='5'></div></div>
+                        <div class="r-list-date"><span>Outubro de 2021</span></div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        
+        <!--PAGINA 6-->  
+        <div id='page6' class="r-page">
+            <div class="r-header">
+               <button class="lbtn  r-btn" h='page2'><i>&#xe801;</i></button>
+            </div>
+            <div class="r-content">
+                <div class="jzdcalt">Configuração</div>
+                <div class="r-checkbox-sw">
+                    <label class="r-label">Notificações</label>
+                    <input class="apple-switch" type="checkbox" checked>
+                </div>
+            </div>
+        </div>
+
+
+        <!--PAGINA 7-->  
+        <div id='page7' class="r-page">
+            <div class="r-header">
+               <button class="lbtn  r-btn" h='page2'><i>&#xe801;</i></button>
+            </div>
+            <div class="r-content">
+                <div class="jzdcalt">Histórico</div>
+                <div id='historico' class="r-historico">
+                
+                </div>
+            </div>
+        </div>
+
+        <!--PAGINA 8-->  
+        <div id='page8' class="r-page">
+            <div class="r-header">
+               <button class="lbtn  r-btn" h='page2'><i>&#xe801;</i></button>
+            </div>
+            <div class="r-content">
+                <div class="jzdcalt">Trocar Pontos</div>
+                <div id='troca_pontos' class="r-troca_pontos">
+                    <div class="r-loja-item">
+                        <div class="r-loja-img">
+                            <img src="https://img.irroba.com.br/filters:fill(fff):quality(95)/equipame/catalog/halteres/par-de-halteres-9kg-cada-emborrachado-musculaco-d-nq-np-607960-mlb32779538399-112019-f20191106112101.jpg">
+                        </div>
+                        <div class="r-loja-info">
+                            <div class="r-loja-name">Cupom 50% OFF Halteres</div>
+                            <div class="r-loja-preço">1200 pontos</div>
+                            <div class="r-loja-descricao"></div>
+                        </div>
+                    </div>
+                    <div class="r-loja-item">
+                        <div class="r-loja-img">
+                            <img src="https://exercitesportes.com.br/wp-content/uploads/2020/11/corda-para-pular-academia-gonastica-aerobico-resistencia-cardiovasculas-exercit-esportes-canoas.png">
+                        </div>
+                        <div class="r-loja-info">
+                            <div class="r-loja-name">Cupom 60% OFF Corda</div>
+                            <div class="r-loja-preço">1100 pontos</div>
+                            <div class="r-loja-descricao"></div>
+                        </div>
+                    </div>
+                    <div class="r-loja-item">
+                        <div class="r-loja-img">
+                            <img src="https://static.netshoes.com.br/produtos/kit-kettlebell-8kg-e-10kg-de-ferro-pintado-de-peso-academia/06/EHJ-0571-006/EHJ-0571-006_zoom1.jpg?ts=1602597678&ims=544x">
+                        </div>
+                        <div class="r-loja-info">
+                            <div class="r-loja-name">Cupom 40% OFF Kettlebell</div>
+                            <div class="r-loja-preço">1500 pontos</div>
+                            <div class="r-loja-descricao"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--LOADING-->
+        <div id='load' class="r-page">
+            <div class="r-content-load r-center">
+                <div>Carregando</div>
+            </div>        
+        </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript" src="js/functions.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
